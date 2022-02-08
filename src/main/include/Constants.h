@@ -1,27 +1,27 @@
-// Copyright (c) FIRST and other WPILib contributors.
+d// Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
 #pragma once
-
-//#define NOHW
-
+#define NOHW
+// #define NOHW_DT
+#define NOHW_SHOT
 //PWM
-constexpr int PWM_LEFT                  = 0;
-constexpr int PWM_RIGHT                 = 1;
+constexpr int PWM_LEFT                  = 1;//C418
+constexpr int PWM_RIGHT                 = 0;//C418
 constexpr int PWM_ARM_SERVO             = 2; // May be a motor
 constexpr int PWM_LOADER_INTAKE         = 3;
 constexpr int PWM_LOADER_INNER          = 4; 
-constexpr int PWM_SHOOTER               = 5;
+constexpr int PWM_SHOOTER               = 3;
 constexpr int PWM_CLIMB_BACK            = 6;
 constexpr int PWM_CLIMB_FRONT           = 7;
 constexpr int PWM_TURRET                = 8;
 
 //DIO
-constexpr int DIO_DRIVE_LEFT_A          = 0;
-constexpr int DIO_DRIVE_LEFT_B          = 1;
-constexpr int DIO_DRIVE_RIGHT_A         = 2;
-constexpr int DIO_DRIVE_RIGHT_B         = 3;
+constexpr int DIO_DRIVE_LEFT_A          = 2; //C418
+constexpr int DIO_DRIVE_LEFT_B          = 3; //C418
+constexpr int DIO_DRIVE_RIGHT_A         = 0;//C418
+constexpr int DIO_DRIVE_RIGHT_B         = 1;//C418
 constexpr int DIO_SHOOTER_ENCODER_A     = 4;
 constexpr int DIO_SHOOTER_ENCODER_B     = 5;
 constexpr int DIO_CLIMBFRONT_ENCODER_A  = 6;
