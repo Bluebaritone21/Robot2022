@@ -17,7 +17,8 @@
  * Command will *not* work!
  */
 class DriveCommand
-    : public frc2::CommandHelper<frc2::CommandBase, DriveCommand> {
+    : public frc2::CommandHelper<frc2::CommandBase, DriveCommand> 
+{
  public:
   DriveCommand(DriveTrainSubsystem* pDriveTrain, frc::XboxController* pController, DriveTrainSubsystem::DriveStyles style);
 

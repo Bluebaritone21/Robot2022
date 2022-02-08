@@ -6,7 +6,7 @@
 
 ShooterSubsystem::ShooterSubsystem()
 {
-#ifndef NOHW
+#ifndef NOHW_SHOT
     m_shooterEncoder.SetDistancePerPulse(m_pulseDisShoot);
 #endif
 }
@@ -17,14 +17,14 @@ void ShooterSubsystem::Periodic() {}
 // ENCODER FUNCTIONS
 void ShooterSubsystem::ResetEncoder()
 {
-#ifndef NOHW
+#ifndef NOHW_SHOT
     m_shooterEncoder.Reset();
 #endif
 }
 
 double ShooterSubsystem::GetEncoderSpeed()
 {
-#ifndef NOHW
+#ifndef NOHW_SHOT
     //Units are distance PER SECOND as scaled by SetDistancePerPulse()
     return m_shooterEncoder.GetRate();
 #endif
@@ -32,7 +32,7 @@ double ShooterSubsystem::GetEncoderSpeed()
 
 int ShooterSubsystem::GetEncoderRaw()
 {
-#ifndef NOHW
+#ifndef NOHW_SHOT
     return m_shooterEncoder.GetRaw();
 #endif
 }
@@ -40,15 +40,8 @@ int ShooterSubsystem::GetEncoderRaw()
 // SHOOTER FUNCTIONS
 void ShooterSubsystem::ShootMotor(double speed)
 {
-#ifndef NOHW
+#ifndef NOHW_SHOT
     m_shooterMotor.Set(speed);
 #endif
 }
 
-// TURRET FUNCTIONS
-void ShooterSubsystem::MoveTurret(double speed)
-{
-#ifndef NOHW
-    m_turretMotor.Set(speed);
-#endif
-}

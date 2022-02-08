@@ -5,7 +5,7 @@
 #pragma once
 
 #include <frc2/command/SubsystemBase.h>
-#include <frc/motorcontrol/Spark.h>
+#include <frc/motorcontrol/Victor.h>
 #include <frc/Encoder.h>
 #include <frc/ADIS16448_IMU.h>
 
@@ -44,14 +44,14 @@ class DriveTrainSubsystem : public frc2::SubsystemBase {
   DriveStyles GetDrive();
 
  private:
- #ifndef NOHW
-  frc::Spark m_leftMotor{PWM_LEFT};
-  frc::Spark m_rightMotor{PWM_RIGHT};
+ #ifndef NOHW_DT_DT
+  frc::Victor m_leftMotor{PWM_LEFT};
+  frc::Victor m_rightMotor{PWM_RIGHT};
 
-  // frc::Encoder m_leftEncoder{DIO_DRIVE_LEFT_A, DIO_DRIVE_LEFT_B};
-  // frc::Encoder m_rightEncoder{DIO_DRIVE_RIGHT_A, DIO_DRIVE_RIGHT_B};
+  frc::Encoder m_leftEncoder{DIO_DRIVE_LEFT_A, DIO_DRIVE_LEFT_B};
+  frc::Encoder m_rightEncoder{DIO_DRIVE_RIGHT_A, DIO_DRIVE_RIGHT_B};
 
-  //frc::ADIS16448_IMU m_imu;
+  frc::ADIS16448_IMU m_imu;
  #endif
   DriveStyles m_currentStyle;
 

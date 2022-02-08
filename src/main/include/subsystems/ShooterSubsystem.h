@@ -6,11 +6,12 @@
 
 #include <frc2/command/SubsystemBase.h>
 #include <frc/Encoder.h>
-#include <frc/motorcontrol/Spark.h>
+#include <frc/motorcontrol/Victor.h>
 
 #include "Constants.h"
 
-class ShooterSubsystem : public frc2::SubsystemBase {
+class ShooterSubsystem : public frc2::SubsystemBase 
+{
  public:
   ShooterSubsystem();
 
@@ -27,15 +28,11 @@ class ShooterSubsystem : public frc2::SubsystemBase {
   // Shooter Functions
   void ShootMotor(double speed);
 
-  // Turret Functions
-  void MoveTurret(double speed);
 
  private:
- #ifndef NOHW
+ #ifndef NOHW_SHOT
   frc::Encoder m_shooterEncoder{DIO_SHOOTER_ENCODER_A, DIO_SHOOTER_ENCODER_B};
-  frc::Spark m_shooterMotor{PWM_SHOOTER};
-
-  frc::Spark m_turretMotor{PWM_TURRET};
+  frc::Victor m_shooterMotor{PWM_SHOOTER};
   #endif
   // Halleffect
 

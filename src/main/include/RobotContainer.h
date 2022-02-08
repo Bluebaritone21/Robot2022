@@ -6,7 +6,6 @@
 
 #include <frc2/command/Command.h>
 #include <frc/XboxController.h>
-
 #include "subsystems/DriveTrainSubsystem.h"
 #include "commands/DriveCommand.h"
 
@@ -22,8 +21,11 @@ class RobotContainer {
   RobotContainer();
 
   frc2::Command* GetAutonomousCommand();
+  frc::XboxController* GetController()
+  {
+    return &m_controllerOne;
+  }
   void RunDrive();
-
  private:
   // The robot's subsystems and commands are defined here...
   DriveTrainSubsystem m_driveTrain;

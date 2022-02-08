@@ -3,13 +3,13 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "Robot.h"
-
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc2/command/CommandScheduler.h>
+#include <frc/XboxController.h>
 
 void Robot::RobotInit() {}
 
-/**
+/*
  * This function is called every robot packet, no matter the mode. Use
  * this for items like diagnostics that you want to run during disabled,
  * autonomous, teleoperated and test.
@@ -44,7 +44,8 @@ void Robot::AutonomousInit() {
 
 void Robot::AutonomousPeriodic() {}
 
-void Robot::TeleopInit() {
+void Robot::TeleopInit() 
+{
   // This makes sure that the autonomous stops running when
   // teleop starts running. If you want the autonomous to
   // continue until interrupted by another command, remove
@@ -60,7 +61,18 @@ void Robot::TeleopInit() {
 /**
  * This function is called periodically during operator control.
  */
-void Robot::TeleopPeriodic() {}
+void Robot::TeleopPeriodic() 
+{
+  frc::XboxController *controller = m_container.GetController();
+  if (controller->GetXButton())
+  {
+    //ShooterSubsystem.ShootMotor(1);
+  }
+  else
+  {
+    //ShooterSubsystem.ShootMotor(0);
+  }
+}
 
 /**
  * This function is called periodically during test mode.
