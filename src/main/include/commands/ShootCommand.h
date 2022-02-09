@@ -3,7 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #pragma once
-
+#include "subsystems/ShooterSubsystem.h"
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
 
@@ -17,7 +17,7 @@
 class ShootCommand
     : public frc2::CommandHelper<frc2::CommandBase, ShootCommand> {
  public:
-  ShootCommand();
+  ShootCommand(ShooterSubsystem *pShoot, double speed);
 
   void Initialize() override;
 
@@ -26,4 +26,8 @@ class ShootCommand
   void End(bool interrupted) override;
 
   bool IsFinished() override;
+ private: 
+ double m_speed;
+ bool m_isFinished =false;
+  ShooterSubsystem * m_pShoot;
 };

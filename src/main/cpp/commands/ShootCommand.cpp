@@ -4,20 +4,33 @@
 
 #include "commands/ShootCommand.h"
 
-ShootCommand::ShootCommand() {
-  // Use addRequirements() here to declare subsystem dependencies.
+ShootCommand::ShootCommand(ShooterSubsystem *pShoot, double speed) 
+{
+m_speed = speed;
+m_pShoot = pShoot;
+AddRequirements(m_pShoot);
 }
 
 // Called when the command is initially scheduled.
-void ShootCommand::Initialize() {}
+void ShootCommand::Initialize() 
+{
+
+}
 
 // Called repeatedly when this Command is scheduled to run
-void ShootCommand::Execute() {}
-
+void ShootCommand::Execute() 
+{
+    m_pShoot->ShootMotor(m_speed);
+    m_isFinished = true;
+}
 // Called once the command ends or is interrupted.
-void ShootCommand::End(bool interrupted) {}
+void ShootCommand::End(bool interrupted) 
+{
+
+}
 
 // Returns true when the command should end.
-bool ShootCommand::IsFinished() {
-  return false;
-}
+bool ShootCommand::IsFinished() 
+{
+ return m_isFinished;
+} 
