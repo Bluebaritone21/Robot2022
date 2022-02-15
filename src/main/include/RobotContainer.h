@@ -27,6 +27,7 @@ class RobotContainer {
   }
   void RunDrive();
  private:
+double speed=0;
   // The robot's subsystems and commands are defined here...
   DriveTrainSubsystem m_driveTrain;
   DriveCommand* m_pDriveCommand;

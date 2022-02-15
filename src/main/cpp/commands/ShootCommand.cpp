@@ -6,9 +6,9 @@
 
 ShootCommand::ShootCommand(ShooterSubsystem *pShoot, double speed) 
 {
-m_speed = speed;
-m_pShoot = pShoot;
-AddRequirements(m_pShoot);
+    m_speed = speed;
+    m_pShoot = pShoot;
+    AddRequirements(m_pShoot);
 }
 
 // Called when the command is initially scheduled.
