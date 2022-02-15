@@ -10,12 +10,12 @@
 /**
  * An example command.
  *
- * <p>Note that this extends CommandHelper, rather extending CommandBase
+ * Note that this extends CommandHelper, rather extending CommandBase
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
 class ShootCommand
-    : public frc2::CommandHelper<frc2::CommandBase, ShootCommand> {
+ : public frc2::CommandHelper<frc2::CommandBase, ShootCommand> {
  public:
   ShootCommand(ShooterSubsystem *pShoot, double speed);
 
@@ -29,5 +29,5 @@ class ShootCommand
  private: 
  double m_speed;
  bool m_isFinished =false;
-  ShooterSubsystem * m_pShoot;
+ ShooterSubsystem * m_pShoot;
 };
